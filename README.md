@@ -18,7 +18,7 @@ This repository contains sample projects covering various topics to demonstrate 
 - Blazor WebAssembly
 - Azure Static Web App
 
-### DevOps
+### Pipelines
 
 - GitHub Actions
 - Azure CLI

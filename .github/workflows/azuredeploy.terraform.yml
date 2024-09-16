@@ -50,10 +50,6 @@ jobs:
           TOKEN=$(az staticwebapp secrets list --name ${{ env.STATIC_WEB_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP_NAME }} --query "properties.apiKey" -o tsv)
           echo "STATIC_WEB_APP_TOKEN=$TOKEN" >> $GITHUB_ENV
 
-      # Logout of Azure
-      - name: Logout of Azure
-        run: az logout
-
       # Deploy to Azure Static Web Apps
       - name: Deploy
         id: builddeploy
@@ -64,3 +60,7 @@ jobs:
           action: 'upload'
           app_location: '/src/AspNet.Core.Blazor.WebAssembly'
           output_location: 'wwwroot'
+
+      # Logout of Azure
+      - name: Logout of Azure
+        run: az logout
